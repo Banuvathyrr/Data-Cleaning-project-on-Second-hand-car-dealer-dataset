@@ -43,6 +43,7 @@ SELECT COUNT('seats') FROM carsproj WHERE 'seats' = '';
 SELECT * FROM carsproj;
 
 
+
 -- (5)-- CHECK FOR INCONSISTENT DATA IN TORQUE COLUMN--
 -- Remove text after the symbol @ and then concat 'Nm' to the numerica value of torque
 
@@ -73,7 +74,9 @@ SELECT *,
  owner, mileage, engine, max_power, torque, seats ORDER BY Name desc) as rownum
  FROM carsproj)
  SELECT COUNT(*) FROM CTE2 WHERE rownum > 1;
- 
+
+
+
  -- (8)-- SHOWS DUPLICATE ROWS--
  SELECT 
   * 
@@ -82,8 +85,8 @@ FROM (SELECT *,
  owner, mileage, engine, max_power, torque, seats ORDER BY Name desc) as rownum
  FROM carsproj) t
  WHERE rownum>1;
- 
- 
+
+
  -- (9)-- TO EXTRACT UNIQUE ROWS WIHOUT DUPLICATES --
  WITH CTE2 AS (
 SELECT *,
