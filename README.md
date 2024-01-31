@@ -1,6 +1,6 @@
 # Data-cleaning-SQL project-on-second-hand-car-dealer-dataset
 
-
+![image](https://github.com/Banuvathyrr/Second-Hand-Car-Dealer-Dashboard/assets/145739539/a142ab7c-136b-4bf3-8248-c66d13d8f1a6)
 
 **1.	Schema named ‘CARS’ created**
 
