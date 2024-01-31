@@ -83,6 +83,7 @@ FROM (SELECT *,
  FROM carsproj) t
  WHERE rownum>1;
  
+ 
  -- (9)-- TO EXTRACT UNIQUE ROWS WIHOUT DUPLICATES --
  WITH CTE2 AS (
 SELECT *,
@@ -134,5 +135,25 @@ DROP COLUMN rownum;
 SELECT * FROM dist_cars;
 
 
+
+-- 13) CLEAN THE TRANSMISSION COLUMN--
+SELECT *,
+CASE
+ WHEN transmission =' Automatic' THEN 'Automatic'
+ WHEN transmission = ' Manual' THEN 'Manual'
+ ELSE transmission
+ END AS transmission_alias
+ FROM dist_cars;
+ 
+ UPDATE dist_cars
+ SET transmission = 
+ CASE 
+	WHEN transmission =' Automatic' THEN 'Automatic'
+	WHEN transmission = ' Manual' THEN 'Manual'
+	ELSE transmission
+ END;
+ 
+
+SELECT * FROM dist_cars;
 
 
